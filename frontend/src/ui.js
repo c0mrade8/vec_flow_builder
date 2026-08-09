@@ -10,11 +10,11 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
-import { MathNode } from './nodes/mathNode';
-import { ConditionalNode } from './nodes/conditionalNode';
-import { ApiRequestNode } from './nodes/apiRequestNode';
-import { FileUploadNode } from './nodes/fileUploadNode';
-import { DelayNode } from './nodes/delayNode';
+import { MixerNode } from './nodes/mixerNode';
+import { ForkNode } from './nodes/forkNode';
+import { RelayNode } from './nodes/relayNode';
+import { IntakeNode } from './nodes/intakeNode';
+import { BufferNode } from './nodes/bufferNode';
 
 import 'reactflow/dist/style.css';
 
@@ -25,11 +25,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
-  math: MathNode,
-  conditional: ConditionalNode,
-  apiRequest: ApiRequestNode,
-  fileUpload: FileUploadNode,
-  delay: DelayNode,
+  mixer: MixerNode,
+  fork: ForkNode,
+  relay: RelayNode,
+  intake: IntakeNode,
+  buffer: BufferNode,
 };
 
 const selector = (state) => ({

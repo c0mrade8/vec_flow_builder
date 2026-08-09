@@ -34,7 +34,7 @@ export const outputNodeConfig={
             getDefaultValue: (id)=>id.replace('customOutput-', 'output_'),
         },
         {
-            name: 'OutputType',
+            name: 'outputType',
             label: 'Type',
             type: 'select',
             options: ['Text', 'Image'],
@@ -62,16 +62,17 @@ export const llmNodeConfig={
             style: {top: '66%'}
         },
     ],
-    ouputs: [{id: (nodeId)=>`${nodeId}-reponse`}],
+    outputs: [{id: (nodeId)=>`${nodeId}-response`}],
 };
 
 //textnode requires cutomisation so it's in textNode.js
 
 //new five node types;
 //math node config
-export const mathNodeConfig ={
-    title: 'Math',
-    accentColor: ACCENT_COLORS.math,
+export const mixerNodeConfig ={
+    title: 'Mixer',
+    accentColor: ACCENT_COLORS.mixer,
+    description: 'Blends A and B into one signal. Connect them, or type a fallback below.',
     fields: [
         {
             name: 'operation',
@@ -100,10 +101,10 @@ export const mathNodeConfig ={
 };
 
 //conditional node config
-export const conditionalNodeConfig = {
-    title: 'Conditional',
-    accentColor: ACCENT_COLORS.conditional,
-    description: 'Routes input to True or False',
+export const forkNodeConfig = {
+    title: 'Fork',
+    accentColor: ACCENT_COLORS.fork,
+    description: 'Splits signal down one of two paths.',
     fields: [
         {
             name: 'condition',
@@ -113,7 +114,7 @@ export const conditionalNodeConfig = {
         },
     ],
     inputs: [{id: (nodeId)=>`${nodeId}-input`}],
-    ouputs: [
+    outputs: [
         {
             id: (nodeId)=> `${nodeId}-true`,
             label: 'True',
@@ -128,9 +129,9 @@ export const conditionalNodeConfig = {
 };
 
 //api request node config
-export const apiRequestNodeConfig = {
-    title: 'API Request',
-    accentColor: ACCENT_COLORS.apiRequest,
+export const relayNodeConfig = {
+    title: 'Relay',
+    accentColor: ACCENT_COLORS.relay,
     fields: [
         {
             name: 'url',
@@ -147,12 +148,12 @@ export const apiRequestNodeConfig = {
         },
     ],
     inputs: [{id: (nodeId)=>`${nodeId}-body`}],
-    outputs: [{id: (nodeId)=>`${nodeId}-reponse`}],    
+    outputs: [{id: (nodeId)=>`${nodeId}-response`}],    
 };
 
-export const fileUploadNodeConfig = {
-    title: 'File Upload',
-    accentColor: ACCENT_COLORS.fileUpload,
+export const intakeNodeConfig = {
+    title: 'Intake',
+    accentColor: ACCENT_COLORS.intake,
     fields: [
         {
             name: 'acceptedType',
@@ -162,12 +163,12 @@ export const fileUploadNodeConfig = {
             defaultValue: 'Any',
         },
     ],
-    ouputs: [{id: (nodeId)=> `${nodeId}-file`}],
+    outputs: [{id: (nodeId)=> `${nodeId}-file`}],
 };
 
-export const delayNodeConfig = {
-    title: 'Delay',
-    accentColor: ACCENT_COLORS.delay,
+export const bufferNodeConfig = {
+    title: 'Buffer',
+    accentColor: ACCENT_COLORS.buffer,
     fields: [
         {
             name: 'seconds',

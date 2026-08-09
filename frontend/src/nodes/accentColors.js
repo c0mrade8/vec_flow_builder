@@ -10,9 +10,9 @@ export const ACCENT_COLORS = {
   customOutput: '#FB7185',  // rose   -- signal out
   llm: '#A78BFA',           // violet -- "the brain"
   text: '#FBBF24',          // amber
-  math: '#60A5FA',          // blue
-  conditional: '#F472B6',   // pink   -- forks the signal
-  apiRequest: '#34D399',    // emerald
-  fileUpload: '#FDBA74',    // orange
-  delay: '#94A3B8',         // slate  -- muted, reads as "pause"
+  mixer: '#60A5FA',          // blue
+  fork: '#F472B6',   // pink   -- forks the signal
+  relay: '#34D399',    // emerald
+  intake: '#FDBA74',    // orange
+  buffer: '#94A3B8',         // slate  -- muted, reads as "pause"
 };

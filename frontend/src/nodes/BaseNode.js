@@ -21,7 +21,7 @@ export const BaseNode=({id,data,config})=>{
     const getFieldValue=(field)=>{
         if (data&&data[field.name]!==undefined) return data[field.name];
         if (field.getDefaultValue) return field.getDefaultValue(id);
-        return field.Defaultvalue ?? '';
+        return field.defaultValue ?? '';
 
     };
 
