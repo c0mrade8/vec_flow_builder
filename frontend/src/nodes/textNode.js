@@ -104,20 +104,34 @@ export const TextNode = ({ id, data }) => {
       <span ref={wideMirrorRef} className="vs-text-mirror vs-text-mirror-wide" />
       <div ref={wrappedMirrorRef} className="vs-text-mirror vs-text-mirror-wrapped" />
 
-      {variables.map((varName, idx) => (
-        <div
+      {variables.map((varName, idx) => {
+        const top = `${((idx+1)/(variables.length+1))*100}%`;
+        return (
+          <Handle
           key={varName}
-          className="vs-handle-wrap vs-handle-wrap-left"
-          style={{ top: `${((idx + 1) / (variables.length + 1)) * 100}%` }}
-        >
-          <Handle type="target" position={Position.Left} id={`${id}-${varName}`} />
-          <span className="vs-handle-label vs-handle-label-left">{varName}</span>
-        </div>
-      ))}
+          type='target'
+          position={Position.Left}
+          id={`${id}-${varName}`}
+          style={{top}}
+          />
+        );
+      })}
+      {variables.map((varName,idx)=>{
+        const top=`${((idx+1)/(variables.length+1)) *100}%`;
+        return(
+          <span
+          key={`${varName}-label`}
+          className='vs-handle-label vs-handle-label-left'
+          style={{top}}>{varName}</span>
+        );
+      })}
 
-      <div className="vs-handle-wrap vs-handle-wrap-right" style={{ top: '50%' }}>
-        <Handle type="source" position={Position.Right} id={`${id}-output`} />
-      </div>
+      <Handle
+      type='source'
+      position={Position.Right}
+      id={`${id}-output`}
+      style={{top:'50%'}}
+      />
     </div>
   );
 };

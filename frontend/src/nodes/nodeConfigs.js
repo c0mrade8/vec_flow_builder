@@ -31,7 +31,7 @@ export const outputNodeConfig={
             name: 'outputName',
             label: 'Name',
             type: 'text',
-            getDefaultValue: (id)=>id.replace('customOutput-', 'ouput_'),
+            getDefaultValue: (id)=>id.replace('customOutput-', 'output_'),
         },
         {
             name: 'OutputType',
@@ -80,6 +80,8 @@ export const mathNodeConfig ={
             options: ['Add', 'Subtract', 'Multiply', 'Divide'],
             defaultValue: 'Add'
         },
+        {name: 'valueA', label:'A (fallback)', type: 'text', defaultValue:'0'},
+        {name: 'valueB', label:'B (fallback)', type: 'text', defaultValue:'0'}
     ],
     inputs: [
         {

@@ -321,38 +321,25 @@ code {
 /* ============================================================
    Handles
    ============================================================ */
-.vs-handle-wrap {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-
-.vs-handle-wrap-left {
-  left: 0;
-}
-
-.vs-handle-wrap-right {
-  right: 0;
-}
-
 .vs-handle-label {
+  position: absolute;
   font-family: var(--vs-font-display);
   font-size: 9px;
   font-weight: 500;
   color: var(--vs-muted);
   white-space: nowrap;
-  background: var(--vs-card-bg);
-  padding: 0 3px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .vs-handle-label-left {
-  margin-left: 10px;
+  right: 100%;
+  margin-right: 10px;
 }
 
 .vs-handle-label-right {
-  margin-right: 10px;
+  left: 100%;
+  margin-left: 10px;
 }
 
 .react-flow__handle {
@@ -376,8 +363,31 @@ code {
   background: var(--vs-panel-bg);
   border-top: 1px solid var(--vs-panel-border);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 12px;
+}
+
+.vs-submit-result {
+  font-family: var(--vs-font-body);
+  font-size: 13px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  max-width: 480px;
+  text-align: center;
+}
+
+.vs-submit-result-success {
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  color: #b8f5eb;
+}
+
+.vs-submit-result-error {
+  background: rgba(251, 113, 133, 0.12);
+  border: 1px solid rgba(251, 113, 133, 0.35);
+  color: #ffc9d1;
 }
 
 .vs-submit-btn {

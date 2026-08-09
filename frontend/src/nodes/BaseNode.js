@@ -70,25 +70,47 @@ export const BaseNode=({id,data,config})=>{
         </div>
       )}
  
-      {inputs.map((handle, idx) => {
+      {inputs.flatMap((handle, idx) => {
         const handleId = handle.id ? handle.id(id) : `${id}-in-${idx}`;
-        return (
-          <div className="vs-handle-wrap vs-handle-wrap-left" style={handle.style} key={handleId}>
-            <Handle type="target" position={Position.Left} id={handleId} />
-            {handle.label && <span className="vs-handle-label vs-handle-label-left">{handle.label}</span>}
-          </div>
-        );
+        const els=[
+            <Handle
+            key={handleId}
+            type='target'
+            position={Position.Left}
+            id={handleId}
+            style={handle.style}/>,
+        ];
+        if (handle.label){
+            els.push(
+                <span key={`${handleId}-label`}
+                className='vs-handle-label vs-handle-label-left'
+                style={{top: handle.style?.top || '50%'}}>{handle.label}</span>
+            );
+        }
+        return els;
       })}
  
-      {outputs.map((handle, idx) => {
+      {outputs.flatMap((handle, idx) => {
         const handleId = handle.id ? handle.id(id) : `${id}-out-${idx}`;
-        return (
-          <div className="vs-handle-wrap vs-handle-wrap-right" style={handle.style} key={handleId}>
-            {handle.label && <span className="vs-handle-label vs-handle-label-right">{handle.label}</span>}
-            <Handle type="source" position={Position.Right} id={handleId} />
-          </div>
-        );
+        const els=[
+            <Handle
+            key={handleId}
+            type='source'
+            position={Position.Right}
+            id={handleId}
+            style={handle.style}
+            />,
+        ];
+        if (handle.label){
+            els.push(
+                <span
+                key={`${handleId}-label`}
+                className='vs-handle-label vs-handle-label-right'
+                style={{top: handle.style?.top || '50%'}}>{handle.label}</span>
+            );
+        }
+        return els
       })}
     </div>
   );
-}
+};
