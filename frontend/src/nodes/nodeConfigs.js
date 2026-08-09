@@ -1,6 +1,9 @@
+import { ACCENT_COLORS } from "./accentColors";
+
 //inputnode config
 export const inputNodeConfig={
     title: 'Input',
+    accentColor: ACCENT_COLORS.customInput,
     fields: [
         {
             name: 'inputName',
@@ -22,6 +25,7 @@ export const inputNodeConfig={
 //ouput node config
 export const outputNodeConfig={
     title: 'Output',
+    accentColor: ACCENT_COLORS.customOutput,
     fields: [
         {
             name: 'outputName',
@@ -44,6 +48,7 @@ export const outputNodeConfig={
 //llmnode config
 export const llmNodeConfig={
     title: 'LLM',
+    accentColor: ACCENT_COLORS.llm,
     description: 'This is an LLM.',
     inputs: [
         {
@@ -66,6 +71,7 @@ export const llmNodeConfig={
 //math node config
 export const mathNodeConfig ={
     title: 'Math',
+    accentColor: ACCENT_COLORS.math,
     fields: [
         {
             name: 'operation',
@@ -94,6 +100,7 @@ export const mathNodeConfig ={
 //conditional node config
 export const conditionalNodeConfig = {
     title: 'Conditional',
+    accentColor: ACCENT_COLORS.conditional,
     description: 'Routes input to True or False',
     fields: [
         {
@@ -121,6 +128,7 @@ export const conditionalNodeConfig = {
 //api request node config
 export const apiRequestNodeConfig = {
     title: 'API Request',
+    accentColor: ACCENT_COLORS.apiRequest,
     fields: [
         {
             name: 'url',
@@ -142,6 +150,7 @@ export const apiRequestNodeConfig = {
 
 export const fileUploadNodeConfig = {
     title: 'File Upload',
+    accentColor: ACCENT_COLORS.fileUpload,
     fields: [
         {
             name: 'acceptedType',
@@ -156,6 +165,7 @@ export const fileUploadNodeConfig = {
 
 export const delayNodeConfig = {
     title: 'Delay',
+    accentColor: ACCENT_COLORS.delay,
     fields: [
         {
             name: 'seconds',

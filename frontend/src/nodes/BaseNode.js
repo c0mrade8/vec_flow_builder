@@ -5,6 +5,7 @@
 import { Handle, Position } from 'reactflow';
 import { useStore } from '../store'
 
+
 const resolve=(value, id, data)=>
     typeof value === 'function' ? value(id,data) : value;
 export const BaseNode=({id,data,config})=>{
@@ -25,7 +26,7 @@ export const BaseNode=({id,data,config})=>{
     };
 
     return (
-    <div className="vs-node" style={{ width: config.width || 220, ...extraStyle }}>
+    <div className="vs-node" style={{ width: config.width || 220, '--vs-accent': config.accentColor || '#94A3B8', ...extraStyle }}>
       <div className="vs-node-header">{config.title}</div>
  
       {config.description && (

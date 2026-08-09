@@ -11,7 +11,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Handle, Position, useUpdateNodeInternals } from 'reactflow';
 import { useStore } from '../store';
-
+import { ACCENT_COLORS } from './accentColors';
 // Matches {{ someValidJsIdentifier }} -- mirrors what would actually be a
 // legal variable/handle name, so junk like {{1bad}} is correctly ignored.
 const VARIABLE_PATTERN = /\{\{\s*([A-Za-z_$][A-Za-z0-9_$]*)\s*\}\}/g;
@@ -87,7 +87,7 @@ export const TextNode = ({ id, data }) => {
   return (
     <div
       className="vs-node vs-node-text"
-      style={{ width: size.width, height: size.height }}
+      style={{ width: size.width, height: size.height, '--vs-accent': ACCENT_COLORS.text }}
     >
       <div className="vs-node-header">Text</div>
 

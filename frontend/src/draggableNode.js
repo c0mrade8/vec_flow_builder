@@ -1,5 +1,7 @@
 // draggableNode.js
 
+import { ACCENT_COLORS } from "./nodes/accentColors";
+
 export const DraggableNode = ({ type, label }) => {
     const onDragStart = (event, nodeType) => {
       const appData = { nodeType }
@@ -7,27 +9,17 @@ export const DraggableNode = ({ type, label }) => {
       event.dataTransfer.setData('application/reactflow', JSON.stringify(appData));
       event.dataTransfer.effectAllowed = 'move';
     };
+    const accent=ACCENT_COLORS[type]||'#94A3B8'
   
     return (
       <div
-        className={type}
-        onDragStart={(event) => onDragStart(event, type)}
-        onDragEnd={(event) => (event.target.style.cursor = 'grab')}
-        style={{ 
-          cursor: 'grab', 
-          minWidth: '80px', 
-          height: '60px',
-          display: 'flex', 
-          alignItems: 'center', 
-          borderRadius: '8px',
-          backgroundColor: '#1C2536',
-          justifyContent: 'center', 
-          flexDirection: 'column'
-        }} 
-        draggable
-      >
-          <span style={{ color: '#fff' }}>{label}</span>
-      </div>
+      className="vs-chip"
+      onDragStart={(event) => onDragStart(event, type)}
+      onDragEnd={(event) => (event.target.style.cursor = 'grab')}
+      draggable>
+      <span className="vs-chip-dot" style={{ backgroundColor: accent }} />
+      <span className="vs-chip-label">{label}</span>
+    </div>
     );
   };
   
